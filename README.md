@@ -37,3 +37,84 @@ This project implements a simple RPC system where a client sends requests to a s
     "params": {"key": "value"}
   }
   ```
+
+# LAB 2 — Logical Clocks and Replication Consistency
+
+## Overview
+This project implements a distributed replicated key–value store using Lamport logical clocks across three AWS EC2 nodes.
+
+## Features
+- Lamport logical clocks
+- Asynchronous replication
+- Last-Writer-Wins conflict resolution
+- Message delay simulation
+- Node failure and recovery handling
+
+## Files
+- `node.py` — Distributed node server
+- `client.py` — Client to issue PUT/GET/STATUS commands
+
+## Requirements
+- Python 3
+- AWS EC2 (Ubuntu 22.04)
+- Open TCP ports: 8000–8002
+
+## Run Nodes
+### Node A
+```bash
+python3 node.py --id A --port 8000 --peers http://IP_B:8001,http://IP_C:8002
+````
+
+### Node B
+
+```bash
+python3 node.py --id B --port 8001 --peers http://IP_A:8000,http://IP_C:8002
+```
+
+### Node C
+
+```bash
+python3 node.py --id C --port 8002 --peers http://IP_A:8000,http://IP_B:8001
+```
+
+## Test Connectivity
+
+```bash
+nc -vz IP_B 8001
+nc -vz IP_C 8002
+```
+
+## Client Usage
+
+### PUT
+
+```bash
+python3 client.py --node http://IP_A:8000 put x 10
+```
+
+### GET
+
+```bash
+python3 client.py --node http://IP_B:8001 get x
+```
+
+### STATUS
+
+```bash
+python3 client.py --node http://IP_C:8002 status
+```
+
+## Scenarios
+
+* Scenario A: Delayed replication A → C
+* Scenario B: Concurrent writes
+* Scenario C: Temporary node outage
+
+## Consistency Model
+
+* Eventual consistency
+* Last-Writer-Wins using Lamport timestamps
+
+## Author
+
+Ziaulhaq Parsa Karimi
