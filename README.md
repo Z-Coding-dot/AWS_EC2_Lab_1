@@ -1,8 +1,10 @@
 # Lab 1 – RPC Implementation on AWS EC2
-
+# LAB 2 — Logical Clocks and Replication Consistency
 ## Overview
 This project implements a simple RPC system where a client sends requests to a server over TCP. The server executes a function and returns the result. The project demonstrates deployment on AWS EC2 and basic failure handling.
 
+## Overview
+This project implements a distributed replicated key–value store using Lamport logical clocks across three AWS EC2 nodes.
 ## Requirements
 - Python 3.x
 - Ubuntu 22.04 EC2 instances
@@ -16,7 +18,7 @@ This project implements a simple RPC system where a client sends requests to a s
 1. SSH into the server instance:
    ```bash
    python3 server.py
-````
+```
 
 2. SSH into the client instance:
 
@@ -38,10 +40,7 @@ This project implements a simple RPC system where a client sends requests to a s
   }
   ```
 
-# LAB 2 — Logical Clocks and Replication Consistency
 
-## Overview
-This project implements a distributed replicated key–value store using Lamport logical clocks across three AWS EC2 nodes.
 
 ## Features
 - Lamport logical clocks
