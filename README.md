@@ -1,6 +1,7 @@
 # Lab 1 – RPC Implementation on AWS EC2
 # LAB 2 — Logical Clocks and Replication Consistency
 # Lab 3 – Raft Consensus Algorithm
+# Lab 4 - Distributed Transactions (2PC & 3PC)
 ## Overview
 This project implements a simple RPC system where a client sends requests to a server over TCP. The server executes a function and returns the result. The project demonstrates deployment on AWS EC2 and basic failure handling.
 
