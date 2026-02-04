@@ -3,11 +3,14 @@
 # Lab 3 – Raft Consensus Algorithm
 # Lab 4 - Distributed Transactions (2PC & 3PC)
 # Lab 5 - MapReduce on AWS EMR
+# Lab 6 - Spark ML Pipeline on Amazon EMR
+
+
 ## Overview
 This project implements a simple RPC system where a client sends requests to a server over TCP. The server executes a function and returns the result. The project demonstrates deployment on AWS EC2 and basic failure handling.
 
-## Overview
-This project implements a distributed replicated key–value store using Lamport logical clocks across three AWS EC2 nodes.
+
+
 ## Requirements
 - Python 3.x
 - Ubuntu 22.04 EC2 instances
